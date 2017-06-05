@@ -275,6 +275,227 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
+### Books
+
+| Verb | URI Pattern | Controller#Action |
+|------|-------------|-------------------|
+| GET  | `/books`    | `users#index`     |
+| GET  | `/books/1`  | `users#show`      |
+| POST | `/books`    | `users#create`    |
+| PATCH| `/books/1`  | `users#update`    |
+|DELETE| `/books/1`  | `users#destroy`   |
+
+#### GET /books
+
+Request:
+
+```sh
+curl "${API}${URL_PATH}" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=$TOKEN"
+```
+
+```sh
+API="http://localhost:4741"
+URL_PATH="/books"
+TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+```
+
+Response:
+
+```md
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:7165
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 3078
+ETag: W/"c06-8k/SUdQ9hmZFhNP+3+U0RRylQCo"
+Date: Mon, 05 Jun 2017 16:18:48 GMT
+Connection: keep-alive
+
+{
+  "book": {
+    "id": 2,
+    "title": "example",
+    startDate: 01-01-1012
+    endDate: '01-01-2012'
+  }
+}
+```
+
+#### GET /books/2
+
+Request:
+
+```sh
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=$TOKEN"
+```
+
+```sh
+API="http://localhost:4741"
+URL_PATH="/books"
+TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+ID=2
+```
+
+Response:
+
+```md
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:7165
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 255
+ETag: W/"ff-FpOA8oh2frLEbHGrPAt1rK8x4nw"
+Date: Mon, 05 Jun 2017 16:20:35 GMT
+Connection: keep-alive
+
+{
+  "book": {
+    "id": 2,
+    "title": "example",
+    startDate: 01-01-1012
+    endDate: '01-01-2012'
+  }
+}
+```
+
+#### POST /books
+
+Request:
+
+```sh
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
+  --data '{
+    "book": {
+      "title": "'"${TEXT}"'",
+      "startDate": "'"${DATE}"'",
+      "endDate": "'"${DATE}"'",
+      "status": "'"${TEXT}"'"
+    }
+  }'
+```
+
+```sh
+API="http://localhost:4741"
+URL_PATH="/books"
+TEXT="TEST"
+DATE="01-01-12"
+TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+
+```
+
+Response:
+
+```md
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:7165
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 255
+ETag: W/"ff-BybssWu3Xjq7wXI2XNPFiACpc1A"
+Date: Mon, 05 Jun 2017 16:22:10 GMT
+Connection: keep-alive
+
+{
+  "book": {
+    "id": 2,
+    "title": "TEST",
+    startDate: 01-01-1012
+    endDate: '01-01-2012'
+  }
+}
+```
+
+
+
+#### PATCH /books/2
+
+Request:
+
+```sh
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
+  --data '{
+    "book": {
+      "title": "'"${TEXT}"'",
+      "startDate": "'"${DATE}"'",
+      "endDate": "'"${DATE}"'",
+      "status": "'"${TEXT}"'"
+    }
+  }'
+```
+
+```sh
+API="http://localhost:4741"
+URL_PATH="/books"
+TEXT="TEST"
+DATE="01-01-12"
+TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+
+```
+
+Response:
+
+```md
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:7165
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 255
+ETag: W/"ff-FpOA8oh2frLEbHGrPAt1rK8x4nw"
+Date: Mon, 05 Jun 2017 16:29:55 GMT
+Connection: keep-alive
+```
+
+
+#### DESTROY /books/2
+
+Request:
+
+```sh
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=$TOKEN"
+```
+
+```sh
+API="http://localhost:4741"
+URL_PATH="/books"
+TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+ID=2
+
+```
+
+Response:
+
+```md
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:7165
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 255
+ETag: W/"ff-FpOA8oh2frLEbHGrPAt1rK8x4nw"
+Date: Mon, 05 Jun 2017 16:29:55 GMT
+Connection: keep-alive
+```
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
