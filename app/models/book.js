@@ -9,15 +9,23 @@ const goalSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true
+    required: false
+  },
+  guestCount: {
+    type: Number,
+    required: false
+  },
+  location: {
+    type: String,
+    required: false
   },
   startDate: {
     type: Date,
-    required: true
+    required: false
   },
   endDate: {
     type: Date,
-    required: true
+    required: false
   },
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
