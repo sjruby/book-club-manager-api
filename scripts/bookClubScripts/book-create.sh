@@ -4,7 +4,7 @@ API="http://localhost:4741"
 URL_PATH="/books"
 TEXT="TEST"
 DATE="01-01-12"
-TOKEN="KhD0pchz7/vIVK7bz2Vn9lyuUwaZhyLosicOYLFSJME=--kMd073xHfy6HESjYMFEUPX3TMKD4DO0y3mgHjbe/TUg="
+TOKEN="oWnOjgB0iY5n+TaiOiYRHSm46PANcyfg2ZNqM4DmF/U=--/mNAo6WY5BmH55bPd17zL3GwK/Vye8g4qTEIM7soxd4="
 
 curl "${API}${URL_PATH}" \
   --include \
