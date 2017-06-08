@@ -19,10 +19,6 @@ Install with `npm install`.
 -   [`express`](http://expressjs.com/)
 -   [`mongoose`](http://mongoosejs.com/)
 
-In order to make requests from your deployed client application, you will need
-to set `CLIENT_ORIGIN` in the environment (e.g. `heroku config:set
-CLIENT_ORIGIN=https://<github-username>.github.io`).
-
 # ERD
 
 A link to the ERD is below:
