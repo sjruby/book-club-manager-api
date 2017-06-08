@@ -23,6 +23,14 @@ In order to make requests from your deployed client application, you will need
 to set `CLIENT_ORIGIN` in the environment (e.g. `heroku config:set
 CLIENT_ORIGIN=https://<github-username>.github.io`).
 
+# ERD
+
+A link to the ERD is below:
+
+Note: The primary resource is called books, in retrospect that should be bookClubs.  Before adding the feature to allow users to track the books they've read, I would need to update the model names.  Because its 3:30 on Thursday before submission...books it stays!
+
+[ERD](http://i.imgur.com/vX1mcmn.jpg)
+
 ## API
 
 ### Authentication
